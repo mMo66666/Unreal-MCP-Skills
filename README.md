@@ -1,18 +1,18 @@
 # Unreal MCP Skills
 
-面向设计师、技术美术与内容创作者的 Unreal Engine 5.8 MCP 技能合集。
+A collection of Unreal Engine 5.8 MCP skills for designers, technical artists, and content creators.
 
-本仓库统一收录围绕 Unreal MCP、Codex 与可选 VibeUE 工具构建的工作流技能。每个 Skill 都可以独立安装和使用；它们分别负责连接诊断、Sequencer 镜头制作和关卡设计。
+This repository brings together workflow skills built around Unreal MCP, Codex, and optional VibeUE tools. Each skill can be installed and used independently. Together, they cover connection diagnostics, Sequencer cinematic production, and level design.
 
 ## Skills
 
-| Skill | 作用 | 目录 |
+| Skill | Purpose | Directory |
 | --- | --- | --- |
-| Unreal MCP Navigator CN | 检查 Unreal 项目、编辑器进程、MCP 服务与工具集状态，并提供安全的故障诊断流程。 | [`skills/unreal-mcp-navigator-cn`](skills/unreal-mcp-navigator-cn) |
-| Unreal MCP Cinematic CN | 将镜头描述、分镜和节奏需求转化为可执行、可检查的 UE5 Sequencer 工作流。 | [`skills/unreal-mcp-cinematic-cn`](skills/unreal-mcp-cinematic-cn) |
-| Unreal MCP Level Design CN | 面向 UE5 关卡规划、场景审查、动线、PCG、植被、流送与性能验证。 | [`skills/unreal-mcp-level-design-cn`](skills/unreal-mcp-level-design-cn) |
+| Unreal MCP Navigator CN | Checks the Unreal project, editor process, MCP service, and registered toolsets, then provides a safe troubleshooting workflow. | [`skills/unreal-mcp-navigator-cn`](skills/unreal-mcp-navigator-cn) |
+| Unreal MCP Cinematic CN | Translates shot descriptions, storyboards, and pacing requirements into executable and reviewable UE5 Sequencer workflows. | [`skills/unreal-mcp-cinematic-cn`](skills/unreal-mcp-cinematic-cn) |
+| Unreal MCP Level Design CN | Supports UE5 level planning, scene auditing, routes, PCG, foliage, streaming, and performance validation. | [`skills/unreal-mcp-level-design-cn`](skills/unreal-mcp-level-design-cn) |
 
-## 仓库结构
+## Repository Structure
 
 ```text
 Unreal-MCP-Skills/
@@ -23,41 +23,41 @@ Unreal-MCP-Skills/
     └── unreal-mcp-level-design-cn/
 ```
 
-每个子目录都是一个完整、独立的 Codex Skill，并保留自己的 `SKILL.md`、`agents/`、`references/`、`scripts/` 和其他原始文件。
+Each subdirectory is a complete, standalone Codex skill. It retains its original `SKILL.md`, `agents/`, `references/`, `scripts/`, and any other source files.
 
-## 安装
+## Installation
 
-### 安装单个 Skill
+### Install One Skill
 
-将需要的 Skill 子目录复制到个人 Codex Skills 目录：
-
-```text
-C:\Users\<你的用户名>\.codex\skills\
-```
-
-例如安装连接诊断 Skill：
+Copy the required skill directory into your personal Codex skills directory:
 
 ```text
-C:\Users\<你的用户名>\.codex\skills\unreal-mcp-navigator-cn\
+C:\Users\<your-username>\.codex\skills\
 ```
 
-### 安装全部 Skills
+For example, to install the connection and diagnostics skill:
 
-将 `skills/` 下的三个子目录全部复制到个人或项目级 Codex Skills 目录，然后刷新或重启 Codex。
+```text
+C:\Users\<your-username>\.codex\skills\unreal-mcp-navigator-cn\
+```
 
-## 使用建议
+### Install All Skills
 
-1. 首先使用 `unreal-mcp-navigator-cn` 检查项目、编辑器和 MCP 工具状态。
-2. 制作 Sequencer 镜头时使用 `unreal-mcp-cinematic-cn`。
-3. 规划、审查或迭代关卡时使用 `unreal-mcp-level-design-cn`。
+Copy all three subdirectories from `skills/` into your personal or project-level Codex skills directory, then refresh or restart Codex.
 
-## 兼容环境
+## Recommended Workflow
+
+1. Start with `unreal-mcp-navigator-cn` to verify the project, editor, MCP service, and available toolsets.
+2. Use `unreal-mcp-cinematic-cn` for Sequencer shots, cameras, and cinematic animation.
+3. Use `unreal-mcp-level-design-cn` for level planning, auditing, and iteration.
+
+## Compatibility
 
 - Unreal Engine 5.8
 - Unreal MCP
-- Codex 或其他兼容 MCP 的 AI 客户端
-- VibeUE（可选，以当前项目实际提供的工具为准）
+- Codex or another MCP-compatible AI client
+- VibeUE (optional and dependent on the toolsets available in the current project)
 
-## 说明
+## Notes
 
-本仓库只是统一组织和分发现有 Skills。`skills/` 内的内容来自原独立仓库，迁移时未修改其文件内容。
+This repository only organizes and distributes the existing skills as a unified collection. The files under `skills/` were copied from their original standalone repositories without modification.
