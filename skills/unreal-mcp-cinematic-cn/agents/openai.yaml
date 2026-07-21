@@ -1,0 +1,4 @@
+interface:
+  display_name: "UE5 镜头执行助手"
+  short_description: "执行设计师给的 UE5 分镜，转 Sequencer 规格并验片"
+  default_prompt: "请使用 ue5-cinematic-shot-language-cn，把我提供的分镜、镜头表或镜头意图执行为可验证、可返工的 UE5 Sequencer。"

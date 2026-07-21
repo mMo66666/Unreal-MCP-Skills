@@ -1,0 +1,3 @@
+display_name: Unreal MCP 导航员
+short_description: 帮助设计师连接 UE 5.8 Unreal MCP、验证工具集并排查连接问题
+default_prompt: 请帮我检查 UE 5.8 Unreal MCP 是否连接成功，并告诉我下一步怎么操作。
