@@ -5,6 +5,7 @@
 ## Stage 0：安全与基线
 
 - 确认目标 World、关卡路径、允许修改范围、PIE 状态和保存策略。
+- 把关卡落盘作为切换提交边界：复制或创建后先保存，验证目标包存在且当前 World 无未解释的 dirty 状态，再加载目标关卡；若切换被未保存状态阻止，先读回 World、目标包与 dirty 状态并处理，不连续强切。
 - 读取 World Partition、Data Layers、Landscape、Water、道路、PCG/Foliage、关键 Actor 和灯光。
 - 验证承载表面：检查 Landscape 组件与高度采样，并向关键区域做向下射线；任一失败都不得假设可以贴地或进入 PIE。
 - 捕获俯视、玩家视角和必要的带网格/标签视口图。
@@ -82,7 +83,7 @@
 ## Stage 7：运行、流送与性能
 
 - 进入 PIE 前保存；检查出生、碰撞、穿模、导航、触发、载具和相机。
-- 先确认 PlayerStart 与关键路线下方射线能命中可碰撞表面；失败时跳过 PIE，并明确记录缺失前置条件。
+- 先确认 PlayerStart 与关键路线下方射线能命中可碰撞表面，并按预期 Pawn/胶囊检查底部净空、出生占位和阻挡；Actor 原点贴地不能代替验证。悬空、埋地、初始重叠或检测失败时跳过 PIE，并记录缺失前置条件。
 - World Partition 地图检查相关 Cells/Data Layers 的加载与卸载。
 - 大世界或高密度场景先获取 Game/Render/GPU 帧耗和瓶颈判定，再决定优化方向。
 - 检查日志中的 error、warning、partial、compiler errors 和资源缺失。

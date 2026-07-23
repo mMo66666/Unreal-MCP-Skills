@@ -51,6 +51,8 @@
 
 - `call_tool` 的 `toolset_name` 使用完整名，`tool_name` 使用短名，例如 `CaptureViewport`。
 - 当前截图实现应同时传 `captureTransform` 与完整 `annotations`；禁用网格/标签时把数值设为 0，不省略对象。
+- 不在文本、日志或中间文件中传递完整截图 base64。优先直接返回图像内容；可能超过传输上限时，让 Unreal 原生截图写入项目 `Saved`，只返回路径、分辨率、文件大小和状态。载荷被截断后改走文件路径，不把残缺 base64 落盘再解码。
 - Lit 透视截图出现 TAA/时序拖影时，先用 Unlit + Realtime Off 判断几何，完成后恢复视图；不要误判为资产损坏。
 - 资产前缀不可靠；加载对象后再判断 `StaticMesh`、`SkeletalMesh` 或 Blueprint Class。
 - Pivot 不统一时，设置 Mesh/旋转/缩放后读取 Actor Bounds，再校正中心和落地高度。
+- 编辑器崩溃或 MCP 失联后停止重放写操作；重连后先检查当前 World、目标包、dirty 状态与 `Saved/Logs`，确认现场和日志证据后再恢复执行或归因。

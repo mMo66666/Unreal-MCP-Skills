@@ -48,7 +48,7 @@
 ## E. 技术与性能
 
 - PIE 可进入，关键路径无阻断碰撞、穿模、导航或触发问题。
-- PIE 前已验证 PlayerStart 和关键路线下方存在可碰撞承载表面；否则明确标为未验证。
+- PIE 前已验证 PlayerStart 和关键路线下方存在可碰撞承载表面，并以预期 Pawn/胶囊底部复核净空、出生占位和阻挡；不存在悬空、埋地或初始重叠，否则明确标为未验证。
 - 日志无未处理的 error、compiler error、missing asset 和部分失败。
 - World Partition / Data Layer 在预期区域正确加载。
 - 高密度对象优先实例化或程序化管理，避免大量无意义独立 Actor。
